@@ -3,72 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Links</title>
+    <title>Quiz Instructions</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
         }
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+            max-width: 800px;
+            margin: 50px auto;
             padding: 20px;
-            gap: 20px;
-        }
-        .tile {
-            width: 200px;
-            height: 100px;
-            background-color: #007BFF;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            text-decoration: none;
+            background: white;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        ul {
+            list-style: disc;
+            margin: 20px 0;
+            padding-left: 40px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s;
         }
-        .tile:hover {
+        button:hover {
             background-color: #0056b3;
             transform: scale(1.05);
         }
-        .tile span {
-            font-size: 16px;
-            font-weight: bold;
+        button:active {
+            transform: scale(1);
         }
     </style>
 </head>
 <body>
-    <h1 style="text-align: center; padding: 20px; background-color: #333; color: white; margin: 0;">
-        Quiz Links for Experiments
-    </h1>
+    <!-- General Instructions Page -->
     <div class="container">
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczmgobge" class="tile" target="_blank">
-            <span>Experiment 2</span>
-        </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczna2ohk" class="tile" target="_blank">
-            <span>Experiment 3</span>
-        </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njcznwv84z" class="tile" target="_blank">
-            <span>Experiment 4</span>
-        </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczoat9ze" class="tile" target="_blank">
-            <span>Experiment 5</span>
-        </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczoqt351" class="tile" target="_blank">
-            <span>Experiment 6</span>
-        </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njc0mw0l34" class="tile" target="_blank">
-            <span>Experiment 7</span>
-        </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njc0oar1g3" class="tile" target="_blank">
-            <span>Experiment 8</span>
-        </a>
+        <h1>General Instructions</h1>
+        <p>Please read the following instructions carefully before proceeding to the quizzes:</p>
+        <ul>
+            <li>This is a series of 7 quizzes, each corresponding to an experiment.</li>
+            <li>Use the "Next Quiz" button only after completing each quiz.</li>
+            <li>Do not navigate to another tab or switch screens during the quiz.</li>
+            <li>If you navigate away, the quiz will auto-submit after a 5-second timeout.</li>
+            <li>Each quiz has a time limit of 2 minutes.</li>
+            <li>For the best experience, attend the quizzes on a laptop or desktop.</li>
+        </ul>
+        <div class="button-container">
+            <button onclick="location.href='quiz-links.html'">Read and Understood</button>
+        </div>
     </div>
 </body>
 </html>
