@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Links</title>
+    <title>24ESE1107 Python Programming Viva</title>
     <style>
         body {
             margin: 0;
@@ -37,6 +37,9 @@
             background-color: #0056b3;
             transform: scale(1.05);
         }
+        .tile.visited {
+            background-color: #28a745; /* Green color for visited tiles */
+        }
         .tile span {
             font-size: 16px;
             font-weight: bold;
@@ -48,28 +51,70 @@
         Quiz Links for Experiments
     </h1>
     <div class="container">
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczmgobge" class="tile" target="_blank">
+        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczmgobge" 
+           class="tile" 
+           target="_blank" 
+           data-tile-id="experiment-2">
             <span>Experiment 2</span>
         </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczna2ohk" class="tile" target="_blank">
+        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczna2ohk" 
+           class="tile" 
+           target="_blank" 
+           data-tile-id="experiment-3">
             <span>Experiment 3</span>
         </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njcznwv84z" class="tile" target="_blank">
+        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njcznwv84z" 
+           class="tile" 
+           target="_blank" 
+           data-tile-id="experiment-4">
             <span>Experiment 4</span>
         </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczoat9ze" class="tile" target="_blank">
+        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczoat9ze" 
+           class="tile" 
+           target="_blank" 
+           data-tile-id="experiment-5">
             <span>Experiment 5</span>
         </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczoqt351" class="tile" target="_blank">
+        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczoqt351" 
+           class="tile" 
+           target="_blank" 
+           data-tile-id="experiment-6">
             <span>Experiment 6</span>
         </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njc0mw0l34" class="tile" target="_blank">
+        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njc0mw0l34" 
+           class="tile" 
+           target="_blank" 
+           data-tile-id="experiment-7">
             <span>Experiment 7</span>
         </a>
-        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njc0oar1g3" class="tile" target="_blank">
+        <a href="https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njc0oar1g3" 
+           class="tile" 
+           target="_blank" 
+           data-tile-id="experiment-8">
             <span>Experiment 8</span>
         </a>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve visited tiles from localStorage
+            const visitedTiles = JSON.parse(localStorage.getItem('visitedTiles')) || {};
+
+            // Mark previously visited tiles
+            document.querySelectorAll('.tile').forEach(tile => {
+                const tileId = tile.getAttribute('data-tile-id');
+                if (visitedTiles[tileId]) {
+                    tile.classList.add('visited');
+                }
+
+                // Add click event listener to mark tiles as visited
+                tile.addEventListener('click', () => {
+                    visitedTiles[tileId] = true;
+                    localStorage.setItem('visitedTiles', JSON.stringify(visitedTiles));
+                    tile.classList.add('visited');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
