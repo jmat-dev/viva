@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Tiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            background-color: #eef2f3;
+        }
+        .tile {
+            width: 30%;
+            min-width: 300px;
+            height: 400px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        .tile.visited {
+            background-color: #c8e6c9; /* Light green for visited tiles */
+        }
+        .tile iframe {
+            width: 100%;
+            height: 90%;
+            border: none;
+        }
+        .tile div {
+            font-size: 10px;
+            text-align: left;
+            padding: 5px;
+        }
+        .tile:hover {
+            background-color: #f1f8ff; /* Light blue on hover */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // JavaScript to handle tile visitation
+        document.addEventListener("DOMContentLoaded", () => {
+            const tiles = document.querySelectorAll(".tile");
+
+            tiles.forEach(tile => {
+                tile.addEventListener("click", () => {
+                    tile.classList.add("visited");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Tile Template -->
+    <div class="tile">
+        <iframe name='proprofs' id='proprofs' 
+                src='https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczna2ohk&id=4169053&ew=430' 
+                allow="camera *;microphone *;fullscreen;">
+        </iframe>
+        <div>
+            <a href='https://www.proprofs.com/quiz-school/solutions/personality-quiz/' 
+               title='ProProfs Personality Quiz Maker' 
+               target='_blank'>ProProfs Personality Quiz Maker</a>
+        </div>
+    </div>
+    <!-- Repeat Tile for 7 tiles -->
+    <div class="tile">
+        <iframe name='proprofs' id='proprofs' 
+                src='https://www.proprofs.com/quiz-school/ugc/story.php?title=nde2njczna2ohk&id=4169053&ew=430' 
+                allow="camera *;microphone *;fullscreen;">
+        </iframe>
+        <div>
+            <a href='https://www.proprofs.com/quiz-school/solutions/personality-quiz/' 
+               title='ProProfs Personality Quiz Maker' 
+               target='_blank'>ProProfs Personality Quiz Maker</a>
+        </div>
+    </div>
+    <!-- Add 5 more tiles similarly -->
+</body>
+</html>
